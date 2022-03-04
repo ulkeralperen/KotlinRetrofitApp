@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class FirstFragment : Fragment() {
 
-    
+
 
     private val BASE_URL="https://rickandmortyapi.com/api/"
     private var rickModels: rickModel?=null

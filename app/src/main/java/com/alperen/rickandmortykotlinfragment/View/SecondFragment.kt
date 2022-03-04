@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.alperen.rickandmortykotlinfragment.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_second.*
+import kotlinx.android.synthetic.main.row_layout.view.*
 
 
 class SecondFragment : Fragment() {
@@ -30,8 +32,32 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            val id=SecondFragmentArgs.fromBundle(it).id
-            println(id)
+            val id:Long=SecondFragmentArgs.fromBundle(it).id
+            val name:String=SecondFragmentArgs.fromBundle(it).name
+            val status:String=SecondFragmentArgs.fromBundle(it).status
+            val species:String=SecondFragmentArgs.fromBundle(it).species
+            val type:String=SecondFragmentArgs.fromBundle(it).type
+            val gender:String=SecondFragmentArgs.fromBundle(it).gender
+            val image:String=SecondFragmentArgs.fromBundle(it).image
+            val url:String=SecondFragmentArgs.fromBundle(it).url
+            val created:String=SecondFragmentArgs.fromBundle(it).created
+
+
+            Picasso.get().load(image)
+                .resize(120,120)
+                .centerCrop()
+                .into(imageView2)
+            textViewid.text="Id: ${id}"
+            textViewname.text="Name: ${name}"
+            textViewstatus.text="Status: ${status}"
+            textViewgender.text="Gender: ${gender}"
+            textViespecies.text="Species: ${species}"
+            textViewtype.text="Type: ${type}"
+            textViewgender.text="Gender: ${gender}"
+            textViewcreated.text="Created Time: ${created}"
+
+
+
         }
 
 
